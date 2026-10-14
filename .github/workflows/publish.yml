@@ -1,0 +1,35 @@
+name: Publish npm
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag (vX.Y.Z)
+        required: true
+permissions:
+  contents: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.tag }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          registry-url: https://registry.npmjs.org
+      - name: Check release tag
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
+        run: node --input-type=module -e 'import fs from "node:fs"; const p=JSON.parse(fs.readFileSync("package.json")); if (p.name !== "dsh-balance-bar" || process.env.RELEASE_TAG !== `v${p.version}`) process.exit(1)'
+      - run: npm install --global npm@11.11.0
+      - run: npm test
+      - run: node --check src/client.js && node --check src/host.mjs
+      - name: Publish with npm trusted publishing
+        run: npm publish --access public --provenance

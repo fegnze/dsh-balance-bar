@@ -35,6 +35,12 @@ node --check src/client.js
 - 加载中仅显示居中转圈，无说明文字；系统减少动态效果偏好下不旋转。
 - 本插件不采集账户凭证、不上传余额、不提供充值操作。
 
+## 可信发布
+
+`.github/workflows/publish.yml` 使用 GitHub Actions OIDC 发布，无需保存 npm Token。触发方式为发布 GitHub Release，或手动指定已有的 `vX.Y.Z` 标签；标签必须匹配包版本。
+
+npm 包设置中的 Trusted Publisher 必须配置：GitHub Actions、组织/用户 `fegnze`、仓库 `dsh-balance-bar`、工作流 `publish.yml`，Environment 留空。配置需要 npm 账号持有人完成二步验证；仅提交工作流不代表授权已经生效。
+
 ## License
 
 MIT，见 LICENSE。
