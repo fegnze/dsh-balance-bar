@@ -1,6 +1,6 @@
 # DSH 侧栏余额栏
 
-[English](<README.md>) | 中文
+[English](<../README.md>) | 中文
 
 社区 desktop 插件 `dsh-balance-bar`（非 DeepSeek 官方出品），兼容 DSH 0.2.0-rc.2。在原生 `sidebar.footer.action` 插槽添加常驻充值余额栏，位于现有账号入口上方。不替换账号入口、不修改核心、不注入定位 DOM、不启动额外服务。
 

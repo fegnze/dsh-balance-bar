@@ -11,7 +11,7 @@
   "type": "module",
   "description": "在侧栏账号入口上方常驻显示 DeepSeek 充值余额",
   "exports": { ".": "./src/host.mjs", "./client": "./src/client.js", "./package.json": "./package.json" },
-  "files": ["src", "cordis.patch.yml", "README.md", "README.zh.md"],
+  "files": ["src", "cordis.patch.yml", "README.md", "docs/zh.md"],
   "peerDependencies": { "@deepseek-ai/dsh-app-boot": "0.2.0-rc.2" },
   "peerDependenciesMeta": { "@deepseek-ai/dsh-app-boot": { "optional": true } },
   "engines": { "node": ">=22", "dsh": "0.2.0-rc.2" },
