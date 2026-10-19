@@ -1,6 +1,6 @@
 {
   "name": "dsh-balance-bar",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "author": "fegnze",
   "icon": "./icon.svg",
@@ -13,9 +13,9 @@
   "description": "在侧栏账号入口上方常驻显示 DeepSeek 充值余额",
   "exports": { ".": "./src/host.mjs", "./client": "./src/client.js", "./package.json": "./package.json" },
   "files": ["src", "icon.svg", "cordis.patch.yml", "README.md", "docs/zh.md"],
-  "peerDependencies": { "@deepseek-ai/dsh-app-boot": "0.2.0-rc.2" },
+  "peerDependencies": { "@deepseek-ai/dsh-app-boot": "0.2.0-rc.2 || 0.2.1-rc.2" },
   "peerDependenciesMeta": { "@deepseek-ai/dsh-app-boot": { "optional": true } },
-  "engines": { "node": ">=22", "dsh": "0.2.0-rc.2" },
+  "engines": { "node": ">=22", "dsh": "0.2.0-rc.2 || 0.2.1-rc.2" },
   "dsh": { "manifestVersion": 1, "bundle": { "patch": "./cordis.patch.yml" }, "client": { "platform": "web", "inject": ["@deepseek-ai/dsh-client-ui-slots", "@deepseek-ai/dsh-client-ui-sidebar"] } },
   "scripts": { "test": "node --test test/*.test.mjs" }
 }

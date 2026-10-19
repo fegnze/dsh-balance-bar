@@ -2,7 +2,7 @@
 
 English | [中文](<docs/zh.md>)
 
-`dsh-balance-bar` is a community desktop plugin (not an official DeepSeek product), compatible with DSH 0.2.0-rc.2. It adds a persistent top-up balance bar in the native `sidebar.footer.action` slot, above the existing account entry. It does not replace that entry, modify core code, inject positioning DOM, or start an additional service.
+`dsh-balance-bar` is a community desktop plugin (not an official DeepSeek product), compatible with DSH 0.2.0-rc.2 and 0.2.1-rc.2. It adds a persistent top-up balance bar in the native `sidebar.footer.action` slot, above the existing account entry. It does not replace that entry, modify core code, inject positioning DOM, or start an additional service.
 
 ## Behavior
 
